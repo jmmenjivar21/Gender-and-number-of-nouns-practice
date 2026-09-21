@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spanish 121 · Capítulo 1 · Semana 1 · Palabras — ser, llamarse, el alfabeto</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Space+Mono:wght@400;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   CAPÍTULO 1 · SEMANA 1 · SPAN 121 · PALABRAS
+   Presentarse · ser · llamarse · el alfabeto
+   ═══════════════════════════════════════════════════════════════ */
+
+:root{
+  --navy:#1B2E4F;
+  --navy-light:#2E4977;
+  --terracotta:#C45D3A;
+  --terracotta-light:#E0876A;
+  --gold:#D4A24C;
+  --gold-light:#EBC373;
+  --sage:#6E8C5F;
+  --sage-light:#9CB590;
+  --cream:#FBF7EE;
+  --cream-dark:#F0E9D8;
+  --text:#1a1a1a;
+  --text-light:#444;
+  --text-hint:#666;
+  --soft-shadow:0 4px 16px rgba(27,46,79,0.08);
+  --tile-shadow:0 2px 8px rgba(27,46,79,0.06);
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Source Sans 3','Helvetica Neue',Helvetica,Arial,sans-serif;
+  background:var(--cream);
+  color:var(--text);
+  line-height:1.55;
+  font-size:16px;
+  min-height:100vh;
+}
+
+.skip-link{position:absolute;left:-9999px;top:0;background:var(--navy);color:#fff;padding:10px 16px;z-index:9999;text-decoration:none;}
+.skip-link:focus{left:8px;top:8px;}
+*:focus-visible{outline:3px solid var(--gold);outline-offset:2px;border-radius:4px;}
+
+.app{max-width:1200px;margin:0 auto;padding:0 20px 64px;position:relative;}
+
+.app::before{
+  content:'1';
+  position:fixed;top:18px;right:24px;z-index:0;
+  font-family:'Playfair Display',serif;
+  font-size:9rem;font-weight:800;
+  color:var(--navy);opacity:0.04;
+  pointer-events:none;line-height:1;
+}
+
+.chap-head{
+  margin-top:36px;padding:32px 36px;border-radius:18px;
+  background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);
+  color:#fff;box-shadow:var(--soft-shadow);
+  position:relative;overflow:hidden;
+}
+.chap-head::after{
+  content:'';position:absolute;right:-40px;bottom:-40px;
+  width:180px;height:180px;border-radius:50%;
+  background:radial-gradient(circle,rgba(212,162,76,0.25),transparent 70%);
+}
+.header-badge{
+  display:inline-block;font-family:'Space Mono',monospace;
+  font-size:0.72rem;letter-spacing:0.18em;text-transform:uppercase;
+  background:rgba(212,162,76,0.22);color:var(--gold-light);
+  padding:5px 12px;border-radius:20px;margin-bottom:10px;
+}
+.header-title{
+  display:block;font-family:'Playfair Display',serif;
+  font-size:2.2rem;font-weight:700;line-height:1.15;margin-bottom:6px;
+}
+.header-subtitle{
+  display:block;font-family:'Space Mono',monospace;
+  font-size:0.85rem;letter-spacing:0.1em;color:var(--gold-light);
+  text-transform:uppercase;
+}
+
+.prog-bar{height:8px;background:var(--cream-dark);border-radius:4px;margin:6px 0 0;overflow:hidden;}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--terracotta),var(--gold));width:0%;transition:width 0.6s ease-out;}
+
+.completion-wrap{margin:22px 0 20px;}
+.completion-top{display:flex;align-items:center;gap:12px;}
+.completion-label{font-family:'Space Mono',monospace;font-size:0.66rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-hint);}
+.completion-score{margin-left:auto;font-family:'Space Mono',monospace;font-size:0.72rem;font-weight:700;letter-spacing:0.04em;color:var(--sage);background:rgba(110,140,95,0.14);padding:4px 12px;border-radius:20px;white-space:nowrap;}
+.completion-pct{font-family:'Playfair Display',serif;font-size:1.15rem;font-weight:700;color:var(--terracotta);margin-left:14px;}
+.completion-legend{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;}
+.legend-pill{
+  font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.04em;
+  padding:4px 10px;border-radius:20px;background:var(--cream-dark);
+  color:var(--text-light);border:1px solid transparent;cursor:pointer;transition:all 0.2s;
+}
+.legend-pill:hover{background:#e6d9c2;color:var(--navy);}
+.legend-pill.done{background:rgba(110,140,95,0.18);border-color:var(--sage);color:var(--sage);}
+
+.submit-bar{
+  background:var(--cream-dark);border-radius:12px;padding:14px 18px;margin-bottom:22px;
+  display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+}
+.submit-bar label{font-family:'Space Mono',monospace;font-size:0.66rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-light);}
+#studentName{flex:1;min-width:210px;border:2px solid #e2d5bd;border-radius:8px;background:#fff;padding:9px 13px;font-family:inherit;font-size:0.94rem;color:var(--navy);}
+#studentName:focus{outline:none;border-color:var(--gold);}
+.btn-download{
+  background:var(--terracotta);color:#fff;border:none;border-radius:8px;padding:10px 20px;cursor:pointer;
+  font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s,transform 0.2s;
+}
+.btn-download:hover{background:var(--terracotta-light);transform:translateY(-1px);}
+.submit-hint{width:100%;font-family:'Space Mono',monospace;font-size:0.62rem;color:var(--text-hint);letter-spacing:0.04em;}
+
+/* Quizzes */
+.quiz-item{background:var(--cream);border-radius:12px;padding:16px 18px;margin-bottom:14px;border-left:4px solid var(--sage);}
+.quiz-item.correct{background:#eef6ea;border-left-color:var(--sage);}
+.quiz-item.wrong{background:#fbeceb;border-left-color:var(--terracotta);}
+.quiz-q{font-size:0.95rem;font-weight:700;color:var(--navy);margin-bottom:2px;}
+.quiz-q .qnum{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--text-hint);font-weight:400;margin-right:6px;}
+.quiz-gloss{font-size:0.8rem;color:var(--text-hint);font-style:italic;margin-bottom:12px;}
+.quiz-options{display:grid;gap:7px;}
+.quiz-opt{
+  display:flex;align-items:flex-start;gap:10px;background:#fff;
+  border:2px solid var(--cream-dark);border-radius:9px;padding:9px 13px;
+  font-size:0.88rem;cursor:pointer;text-align:left;font-family:inherit;color:var(--text);width:100%;
+  transition:border-color 0.2s,background 0.2s;
+}
+.quiz-opt:hover{border-color:var(--sage-light);background:#fbfaf6;}
+.quiz-opt.selected{border-color:var(--navy);background:#f3f5fa;}
+.quiz-opt.is-correct{border-color:var(--sage);background:#eef6ea;}
+.quiz-opt.is-wrong{border-color:var(--terracotta);background:#fbeceb;}
+.quiz-opt .letter{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--text-hint);flex-shrink:0;margin-top:2px;}
+.quiz-explain{font-size:0.84rem;margin-top:10px;padding:10px 13px;border-radius:8px;background:#fff;border-left:3px solid var(--gold);display:none;}
+.quiz-explain.show{display:block;}
+
+.res-check{margin-top:12px;padding-top:12px;border-top:1px dashed var(--cream-dark);}
+.res-check .rc-label{font-family:'Space Mono',monospace;font-size:0.57rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--sage);margin-bottom:6px;}
+.res-check .rc-q{font-size:0.83rem;margin-bottom:4px;color:var(--text);}
+.res-check .rc-gloss{font-size:0.73rem;color:var(--text-hint);font-style:italic;margin-bottom:8px;}
+.res-check .quiz-opt{font-size:0.8rem;padding:7px 11px;}
+
+/* Task / short-answer inputs */
+.task-input{width:100%;border:none;border-bottom:2px solid var(--cream-dark);background:transparent;font-family:inherit;font-size:0.92rem;color:var(--navy);padding:5px 6px;}
+.task-input:focus{outline:none;border-bottom-color:var(--gold);}
+.task-fb{font-family:'Space Mono',monospace;font-size:0.66rem;margin-top:6px;display:none;}
+.task-fb.show{display:block;}
+.task-fb.ok{color:var(--sage);}
+.task-fb.ng{color:var(--terracotta);}
+.task-row{display:flex;align-items:center;gap:10px;background:var(--cream);border-radius:9px;padding:11px 14px;margin-bottom:9px;flex-wrap:wrap;}
+.task-row .rnum{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--text-hint);min-width:20px;}
+.task-tag{font-family:'Space Mono',monospace;font-size:0.6rem;background:var(--cream-dark);color:var(--navy);padding:3px 9px;border-radius:4px;white-space:nowrap;}
+.task-row .task-fb{width:100%;padding-left:30px;}
+
+/* Short answer / writing box */
+.disc-box{width:100%;border:2px solid var(--cream-dark);border-radius:12px;padding:16px;font-family:inherit;font-size:0.93rem;color:var(--navy);resize:vertical;min-height:150px;background:#fff;transition:border-color 0.2s;}
+.disc-box:focus{outline:none;border-color:var(--gold);}
+.wordcount{font-family:'Space Mono',monospace;font-size:0.66rem;color:var(--text-hint);margin-top:6px;}
+.wordcount.ok{color:var(--sage);}
+.wordcount.ng{color:var(--terracotta);}
+.req-list{list-style:none;margin:0;padding:0;}
+.req-list li{background:var(--cream);border-left:4px solid var(--terracotta);border-radius:0 9px 9px 0;padding:12px 16px;margin-bottom:10px;font-size:0.92rem;}
+
+.rubric-table{width:100%;border-collapse:collapse;font-size:0.88rem;margin-top:6px;}
+.rubric-table th{background:var(--navy);color:#fff;text-align:left;padding:9px 12px;font-family:'Space Mono',monospace;font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;}
+.rubric-table td{padding:9px 12px;border-bottom:1px solid var(--cream-dark);}
+.rubric-table td:last-child{text-align:right;white-space:nowrap;color:var(--text-light);}
+
+/* Tabs */
+.nav{display:flex;gap:4px;flex-wrap:wrap;background:#fff;padding:6px;border-radius:14px;box-shadow:var(--tile-shadow);margin-bottom:24px;}
+.tab{
+  flex:1 1 auto;min-width:110px;padding:12px 14px;background:transparent;border:none;border-radius:10px;
+  font-family:'Source Sans 3',sans-serif;font-size:0.9rem;font-weight:600;color:var(--text-light);cursor:pointer;transition:all 0.18s ease;min-height:44px;
+}
+.tab:hover{background:var(--cream-dark);color:var(--navy);}
+.tab.active{background:var(--navy);color:#fff;box-shadow:0 2px 6px rgba(27,46,79,0.25);}
+
+.sec{display:none;animation:fadein 0.3s ease;}
+.sec.active{display:block;}
+@keyframes fadein{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+
+.sec-title{font-family:'Playfair Display',serif;font-size:1.65rem;font-weight:700;color:var(--navy);margin-bottom:6px;}
+.sec-sub{font-family:'Space Mono',monospace;font-size:0.78rem;letter-spacing:0.12em;color:var(--terracotta);text-transform:uppercase;margin-bottom:22px;}
+
+.week-hero{background:#fff;padding:26px 30px;border-radius:14px;margin-bottom:24px;box-shadow:var(--tile-shadow);border-left:5px solid var(--terracotta);}
+.week-hero h1{font-family:'Playfair Display',serif;font-size:1.55rem;color:var(--navy);margin-bottom:8px;}
+.week-hero p{font-size:0.97rem;color:var(--text-light);margin-bottom:14px;}
+.topic-chips{display:flex;flex-wrap:wrap;gap:7px;}
+.chip{display:inline-block;padding:5px 11px;background:var(--cream-dark);color:var(--navy);border-radius:14px;font-size:0.78rem;font-weight:600;font-family:'Space Mono',monospace;letter-spacing:0.02em;}
+
+.ch-intro{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:#fff;padding:24px 28px;border-radius:14px;margin-bottom:22px;box-shadow:var(--soft-shadow);position:relative;overflow:hidden;}
+.ch-intro::before{content:'';position:absolute;left:-30px;top:-30px;width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,rgba(196,93,58,0.25),transparent 70%);}
+.ch-intro .label{position:relative;font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;}
+.ch-intro h2{position:relative;font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:10px;color:#fff;}
+.ch-intro p{position:relative;font-size:0.95rem;line-height:1.6;color:rgba(255,255,255,0.95);}
+
+.card{background:#fff;padding:22px 26px;border-radius:14px;margin-bottom:18px;box-shadow:var(--tile-shadow);}
+.card-title{font-family:'Playfair Display',serif;font-size:1.2rem;font-weight:700;color:var(--navy);margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.card-title .pill{font-family:'Space Mono',monospace;font-size:0.65rem;background:var(--gold);color:#fff;padding:3px 9px;border-radius:12px;letter-spacing:0.1em;}
+
+.obj-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;}
+.obj{background:var(--cream);padding:14px 16px;border-radius:10px;border-left:3px solid var(--sage);display:flex;gap:11px;align-items:flex-start;}
+.obj-num{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:var(--sage);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:0.78rem;font-weight:700;}
+.obj-text{font-size:0.93rem;color:var(--text);line-height:1.45;}
+
+/* Schedule table */
+.sched{width:100%;border-collapse:collapse;font-size:0.9rem;}
+.sched th{background:var(--navy);color:#fff;text-align:left;padding:9px 12px;font-family:'Space Mono',monospace;font-size:0.64rem;letter-spacing:0.08em;text-transform:uppercase;}
+.sched td{padding:10px 12px;border-bottom:1px solid var(--cream-dark);vertical-align:top;}
+.sched tr:last-child td{border-bottom:none;}
+.bdg{display:inline-block;padding:2px 10px;border-radius:20px;font-size:0.68rem;font-weight:700;font-family:'Space Mono',monospace;letter-spacing:0.04em;}
+.b-in{background:rgba(27,46,79,0.1);color:var(--navy);}
+.b-pr{background:rgba(212,162,76,0.2);color:#8a6a1e;}
+.b-sg{background:rgba(110,140,95,0.18);color:var(--sage);}
+
+/* Resource cards */
+.res-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;}
+.res-card{background:#fff;padding:16px 18px;border-radius:12px;border-top:3px solid var(--gold);box-shadow:var(--tile-shadow);}
+.res-card-day{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--terracotta);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:5px;}
+.res-card-topic{font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);font-size:1.02rem;margin-bottom:10px;}
+.res-card a{display:block;font-size:0.84rem;color:var(--navy-light);text-decoration:none;padding:6px 0;border-bottom:1px solid var(--cream-dark);word-break:break-word;}
+.res-card a:last-child{border-bottom:none;}
+.res-card a:hover{color:var(--terracotta);}
+.res-card a::before{content:'→ ';color:var(--gold);font-weight:700;}
+
+/* Flip cards */
+.vocab-hint{text-align:center;font-size:0.82rem;color:var(--text-hint);font-style:italic;margin-bottom:14px;}
+.vocab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:11px;}
+.vocab-card{perspective:1000px;height:118px;cursor:pointer;}
+.vocab-card-inner{position:relative;width:100%;height:100%;transition:transform 0.6s;transform-style:preserve-3d;}
+.vocab-card.flipped .vocab-card-inner{transform:rotateY(180deg);}
+.vocab-front,.vocab-back{position:absolute;width:100%;height:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden;display:flex;align-items:center;justify-content:center;padding:14px;border-radius:11px;text-align:center;box-shadow:var(--tile-shadow);}
+.vocab-front{background:#fff;border:2px solid var(--cream-dark);font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);font-size:0.95rem;}
+.vocab-back{background:linear-gradient(135deg,var(--terracotta),var(--terracotta-light));color:#fff;transform:rotateY(180deg);font-size:0.92rem;font-weight:600;}
+.vocab-card.greet-card .vocab-front{border-color:var(--sage-light);color:var(--sage);}
+.vocab-card.greet-card .vocab-back{background:linear-gradient(135deg,var(--sage),#5A7350);}
+
+/* Grammar boxes */
+.gbox{background:#fff;padding:24px 28px;border-radius:14px;margin-bottom:22px;box-shadow:var(--tile-shadow);border-top:4px solid var(--terracotta);}
+.gbox.alt{border-top-color:var(--sage);}
+.gbox.alt2{border-top-color:var(--gold);}
+.gbox h3{font-family:'Playfair Display',serif;font-size:1.35rem;color:var(--navy);margin-bottom:6px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;}
+.gbox h3 .num{font-family:'Space Mono',monospace;font-size:0.7rem;background:var(--terracotta);color:#fff;padding:4px 10px;border-radius:11px;letter-spacing:0.1em;}
+.gbox.alt h3 .num{background:var(--sage);}
+.gbox.alt2 h3 .num{background:var(--gold);color:var(--navy);}
+.gbox .sub{font-size:0.9rem;color:var(--text-hint);margin-bottom:16px;font-style:italic;}
+
+/* Conjugation table */
+.conj-table{width:100%;border-collapse:collapse;margin:14px 0;background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 1px 4px rgba(27,46,79,0.05);}
+.conj-table th,.conj-table td{padding:10px 14px;text-align:left;font-size:0.93rem;border-bottom:1px solid var(--cream-dark);}
+.conj-table th{background:var(--navy);color:#fff;font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:700;}
+.conj-table td .pn{color:var(--text-hint);}
+.conj-table td .fm{color:var(--terracotta);font-weight:700;font-style:italic;}
+.conj-table tr:last-child td{border-bottom:none;}
+
+.ex-box{background:var(--cream);border-left:3px solid var(--sage);padding:12px 16px;border-radius:8px;margin:14px 0;}
+.ex-box p{font-size:0.9rem;color:var(--text);margin:4px 0;}
+.ex-box em{color:var(--text-hint);font-style:italic;}
+
+.ojo{background:#FFF6F0;border-left:4px solid var(--terracotta);padding:14px 18px;border-radius:8px;margin:16px 0;}
+.ojo-title{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--terracotta);letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-bottom:6px;}
+.ojo p{font-size:0.92rem;color:var(--text);line-height:1.55;}
+.ojo em{color:var(--terracotta);font-style:italic;font-weight:600;}
+
+/* Pronunciation */
+.vowel-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;}
+@media(max-width:520px){.vowel-grid{grid-template-columns:repeat(3,1fr);}}
+.vowel-card{text-align:center;padding:16px 8px;background:var(--cream);border-radius:12px;border:2px solid var(--cream-dark);}
+.vowel-card .v{font-family:'Playfair Display',serif;font-size:2rem;font-weight:800;color:var(--terracotta);line-height:1;}
+.vowel-card .s{font-family:'Space Mono',monospace;font-size:0.8rem;color:var(--text-hint);margin-top:6px;}
+.snd-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:520px){.snd-grid{grid-template-columns:1fr;}}
+.snd-item{padding:12px 15px;background:var(--cream);border-radius:10px;font-size:0.9rem;display:flex;align-items:center;gap:12px;}
+.snd-item .snd-l{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:800;color:var(--sage);min-width:34px;}
+.q-pill{display:inline-block;padding:3px 10px;border-radius:14px;background:var(--cream-dark);color:var(--navy);font-family:'Space Mono',monospace;font-size:0.78rem;margin:3px 3px 3px 0;}
+
+/* Fill-in blanks */
+.ex-item{display:flex;align-items:baseline;gap:10px;padding:11px 0;border-bottom:1px solid var(--cream-dark);font-size:0.97rem;}
+.ex-item:last-of-type{border-bottom:none;}
+.ex-num{flex-shrink:0;width:28px;height:28px;border-radius:50%;background:var(--cream);color:var(--navy);display:inline-flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:0.78rem;font-weight:700;}
+.ex-text{flex:1;line-height:1.9;color:var(--text);}
+.ex-hint{font-family:'Space Mono',monospace;font-size:0.78rem;color:var(--terracotta);margin-left:4px;}
+.blk{display:inline-block;width:130px;padding:6px 10px;border:2px solid var(--cream-dark);border-radius:6px;font-family:'Source Sans 3',sans-serif;font-size:0.95rem;color:var(--navy);background:#fff;outline:none;transition:border-color 0.15s;}
+.blk.wide{width:180px;}
+.blk:focus{border-color:var(--gold);}
+.blk.ok{border-color:var(--sage);background:#F4F8F0;color:#3F5C32;}
+.blk.ng{border-color:var(--terracotta);background:#FFF0EA;color:#8E3A1F;}
+
+/* Buttons */
+.chk-btn,.rst-btn,.toggle-btn{display:inline-flex;align-items:center;gap:6px;padding:10px 18px;border:none;border-radius:8px;font-family:'Source Sans 3',sans-serif;font-size:0.92rem;font-weight:700;cursor:pointer;transition:all 0.15s;min-height:42px;margin-top:14px;}
+.chk-btn{background:var(--navy);color:#fff;}
+.chk-btn:hover{background:var(--navy-light);}
+.rst-btn{background:#fff;color:var(--navy);border:2px solid var(--cream-dark);margin-left:6px;}
+.rst-btn:hover{border-color:var(--navy);}
+.toggle-btn{background:var(--gold);color:var(--navy);margin-left:6px;}
+.toggle-btn:hover{background:var(--gold-light);}
+.res-msg{margin-top:12px;font-size:0.93rem;font-weight:700;min-height:22px;}
+.res-msg.ok{color:#3F5C32;}
+.res-msg.ng{color:#8E3A1F;}
+
+.word-bank{background:var(--cream);padding:11px 14px;border-radius:8px;margin-bottom:14px;font-size:0.88rem;}
+.word-bank-label{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--text-hint);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:4px;}
+.word-bank-words span{display:inline-block;background:#fff;padding:3px 9px;border-radius:11px;margin:2px 3px;font-size:0.84rem;border:1px solid var(--cream-dark);color:var(--navy);font-weight:700;}
+
+.estar-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;background:var(--cream);padding:18px;border-radius:12px;}
+@media(max-width:520px){.estar-grid{grid-template-columns:1fr;}}
+.estar-grid .field{background:#fff;padding:11px 14px;border-radius:8px;display:flex;align-items:center;justify-content:space-between;gap:10px;}
+.estar-grid .field label{font-weight:700;color:var(--navy);font-size:0.92rem;}
+
+/* ══ MATCHING GAME ══ */
+.match-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.match-col-label{font-family:'Space Mono',monospace;font-size:0.62rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-hint);margin-bottom:6px;}
+.mi{padding:11px 13px;border:2px solid var(--cream-dark);border-radius:9px;cursor:pointer;font-size:0.86rem;background:#fff;transition:all 0.12s;line-height:1.4;margin-bottom:7px;color:var(--text);}
+.mi:hover{border-color:var(--sage-light);}
+.mi.sel{border-color:var(--navy);background:#f3f5fa;color:var(--navy);}
+.mi.done{border-color:var(--sage);background:#eef6ea;color:#3F5C32;pointer-events:none;opacity:0.75;}
+.mi.bad{border-color:var(--terracotta);background:#fbeceb;}
+
+/* ══ CONJUGATION CHALLENGE GAME ══ */
+.game-wrap{background:var(--cream);border-radius:14px;padding:22px;text-align:center;}
+.game-scorebar{display:flex;justify-content:center;gap:22px;margin-bottom:16px;font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--text-hint);}
+.game-scorebar b{display:block;font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--terracotta);margin-top:2px;}
+.game-prompt{font-family:'Playfair Display',serif;font-size:1.6rem;color:var(--navy);margin:10px 0 4px;}
+.game-sub{font-size:0.85rem;color:var(--text-hint);font-style:italic;margin-bottom:18px;}
+.game-opts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:520px;margin:0 auto;}
+@media(max-width:520px){.game-opts{grid-template-columns:1fr;}}
+.game-opt{background:#fff;border:2px solid var(--cream-dark);border-radius:10px;padding:14px 10px;font-family:'Source Sans 3',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);cursor:pointer;transition:all 0.12s;}
+.game-opt:hover{border-color:var(--sage-light);transform:translateY(-2px);}
+.game-opt.is-correct{border-color:var(--sage);background:#eef6ea;color:#3F5C32;}
+.game-opt.is-wrong{border-color:var(--terracotta);background:#fbeceb;color:#8E3A1F;}
+.game-feedback{min-height:22px;margin-top:14px;font-weight:700;font-size:0.95rem;}
+.game-feedback.ok{color:#3F5C32;}
+.game-feedback.ng{color:#8E3A1F;}
+.game-done{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);}
+
+/* Activity */
+.act-card{background:#fff;padding:22px 26px;border-radius:14px;border-left:4px solid var(--gold);box-shadow:var(--tile-shadow);margin-bottom:18px;}
+.act-step{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--cream-dark);}
+.act-step:last-of-type{border-bottom:none;}
+.snum{flex-shrink:0;width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy);display:inline-flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-size:0.8rem;font-weight:700;}
+.act-step p{font-size:0.93rem;color:var(--text);line-height:1.5;}
+.act-step .say{font-style:italic;color:var(--terracotta);}
+.q-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px;margin-top:6px;}
+.q-box{background:var(--cream);padding:12px 15px;border-radius:8px;font-size:0.9rem;}
+.q-box .qa{color:var(--navy);font-style:italic;font-weight:700;display:block;}
+.q-box .qb{color:var(--text-hint);font-size:0.8rem;}
+
+.cult-card{background:linear-gradient(135deg,var(--sage) 0%,#5A7350 100%);color:#fff;padding:24px 28px;border-radius:14px;margin-bottom:18px;box-shadow:var(--soft-shadow);}
+.cult-card .label{font-family:'Space Mono',monospace;font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:6px;}
+.cult-card h3{font-family:'Playfair Display',serif;font-size:1.4rem;margin-bottom:12px;color:#fff;}
+.cult-card p{font-size:0.95rem;line-height:1.65;color:rgba(255,255,255,0.95);}
+.cult-card .fact-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+.cult-card .fact-pills span{background:rgba(255,255,255,0.18);padding:5px 11px;border-radius:14px;font-size:0.82rem;font-weight:600;}
+
+.model-box{display:none;background:var(--cream);padding:14px 18px;border-radius:10px;margin-top:14px;border-left:4px solid var(--gold);}
+.model-box.show{display:block;animation:fadein 0.3s ease;}
+.model-box-title{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--gold);letter-spacing:0.12em;text-transform:uppercase;font-weight:700;margin-bottom:8px;}
+
+.footer{margin-top:36px;padding:20px;text-align:center;font-family:'Space Mono',monospace;font-size:0.76rem;color:var(--text-hint);letter-spacing:0.05em;}
+
+@media(max-width:600px){
+  .chap-head{padding:24px 22px;}
+  .header-title{font-size:1.7rem;}
+  .gbox,.card,.cult-card,.act-card,.ch-intro{padding:18px 20px;}
+  .ex-item{flex-wrap:wrap;}
+}
+</style>
+</head>
+<body>
+
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
+<div class="app">
+
+  <!-- HEADER -->
+  <div class="chap-head">
+    <span class="header-badge">SPSCC · ESP 121</span>
+    <span class="header-title">Capítulo 1 — Palabras</span>
+    <span class="header-subtitle">Semana 1 · Week 1</span>
+  </div>
+
+  <div class="completion-wrap">
+    <div class="completion-top">
+      <span class="completion-label">Mi progreso · My progress</span>
+      <span class="completion-score" id="completionScore">★ 0% correcto</span>
+      <span class="completion-pct" id="completionPct">0%</span>
+    </div>
+    <div class="prog-bar"><div class="prog-fill" id="pf" style="width:0%"></div></div>
+    <div class="completion-legend" id="completionLegend"></div>
+  </div>
+
+  <div class="submit-bar">
+    <label for="studentName">Nombre / Name</label>
+    <input id="studentName" type="text" placeholder="Type your full name here" autocomplete="name">
+    <button class="btn-download" onclick="downloadReport()">⬇ Download Report</button>
+    <span class="submit-hint">Enter your name, work through every tab, then download your report and submit it as homework.</span>
+  </div>
+
+  <nav class="nav" aria-label="Course sections">
+    <button class="tab active" onclick="switchTab('ov',this)">Inicio</button>
+    <button class="tab" onclick="switchTab('vo',this)">Vocabulario</button>
+    <button class="tab" onclick="switchTab('gr',this)">Gramática</button>
+    <button class="tab" onclick="switchTab('pr',this)">Pronunciación</button>
+    <button class="tab" onclick="switchTab('ej',this)">Ejercicios</button>
+    <button class="tab" onclick="switchTab('ju',this)">Juegos</button>
+  </nav>
+
+  <div id="main-content"></div>
+
+  <!-- ═══ INICIO ═══ -->
+  <section class="sec active" id="sec-ov">
+    <h2 class="sec-title">Capítulo 1 · Palabras</h2>
+    <p class="sec-sub">Semana 1 · Introduce yourself · ser · llamarse · el alfabeto</p>
+
+    <div class="ch-intro">
+      <div class="label">Capítulo 1 · Empiezo · The course starts here</div>
+      <h2>Welcome to Spanish 121</h2>
+      <p>In this first chapter you will learn to <strong>introduce yourself and others</strong>. You'll master the verbs <em>ser</em> (to be) and <em>llamarse</em> (to be named), use subject pronouns, sound out the whole Spanish alphabet, and pick up the classroom phrases you'll use every day. The unit ends with an oral <strong>¡Conócete!</strong> activity and a short <strong>online profile</strong> in Spanish.</p>
+    </div>
+
+    <div class="week-hero">
+      <h1>This Week: Presentarse — Getting Started in Spanish</h1>
+      <p>Semana 1 builds your very first toolkit. You'll flip through classroom-phrase and greeting flashcards, learn the <strong>ser</strong> and <strong>llamarse</strong> conjugations, practice the alphabet's pure vowels and special sounds, and test yourself with matching, fill-in, short-answer, and a conjugation game. Everything you need to say <em>«Hola, me llamo…»</em> with confidence.</p>
+      <div class="topic-chips">
+        <span class="chip">frases de la clase</span>
+        <span class="chip">ser · soy/eres/es</span>
+        <span class="chip">llamarse</span>
+        <span class="chip">pronombres</span>
+        <span class="chip">el alfabeto</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Chapter 1 Learning Objectives <span class="pill">7 GOALS</span></div>
+      <div class="obj-grid">
+        <div class="obj"><span class="obj-num">1</span><span class="obj-text">Introduce yourself and others using <em>llamarse</em> and <em>ser</em>.</span></div>
+        <div class="obj"><span class="obj-num">2</span><span class="obj-text">Use subject pronouns correctly in spoken and written Spanish.</span></div>
+        <div class="obj"><span class="obj-num">3</span><span class="obj-text">Conjugate the verb <em>ser</em> in the present tense.</span></div>
+        <div class="obj"><span class="obj-num">4</span><span class="obj-text">Use the reflexive verb <em>llamarse</em> to give names.</span></div>
+        <div class="obj"><span class="obj-num">5</span><span class="obj-text">Identify and produce all sounds of the Spanish alphabet.</span></div>
+        <div class="obj"><span class="obj-num">6</span><span class="obj-text">Use essential classroom phrases and courtesy expressions.</span></div>
+        <div class="obj"><span class="obj-num">7</span><span class="obj-text">Write a 75–100 word online-platform profile in Spanish.</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Online Resources <span class="pill">VIDEOS · PRÁCTICA</span></div>
+      <div class="res-grid">
+        <div class="res-card">
+          <div class="res-card-day">Pronunciación · El alfabeto</div>
+          <div class="res-card-topic">The Spanish Alphabet</div>
+          <a href="https://www.youtube.com/watch?v=ZAp28thZsKs" target="_blank" rel="noopener">Video: Spanish Alphabet — Señor Jordan</a>
+          <a href="https://studyspanish.com/alphabet" target="_blank" rel="noopener">Practice: Interactive Alphabet — StudySpanish</a>
+          <div class="res-check" id="res0"></div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-day">Gramática · SER</div>
+          <div class="res-card-topic">The Verb Ser</div>
+          <a href="https://www.youtube.com/watch?v=lyy8pgKQHgY" target="_blank" rel="noopener">Video: The Verb Ser — maestrokaplan</a>
+          <a href="https://conjuguemos.com/verb/2035489" target="_blank" rel="noopener">Practice: Ser Conjugation Drills — Conjuguemos</a>
+          <div class="res-check" id="res1"></div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-day">Vocabulario · La clase</div>
+          <div class="res-card-topic">Classroom Phrases</div>
+          <a href="https://quizlet.com/search?query=spanish+classroom+phrases+ser+llamarse&type=sets" target="_blank" rel="noopener">Quizlet: Classroom Phrases Sets</a>
+          <a href="https://www.spanishdict.com/guide/spanish-alphabet-pronunciation" target="_blank" rel="noopener">Guide: Alphabet &amp; Pronunciation — SpanishDict</a>
+          <div class="res-check" id="res2"></div>
+        </div>
+        <div class="res-card">
+          <div class="res-card-day">Gramática · Presentarse</div>
+          <div class="res-card-topic">Llamarse &amp; Introductions</div>
+          <a href="https://www.youtube.com/@spanishpod101/search?query=introduce+yourself+spanish" target="_blank" rel="noopener">Video: Introduce Yourself in Spanish</a>
+          <a href="https://studyspanish.com/grammar/lessons/reflex1" target="_blank" rel="noopener">Practice: Reflexive Verbs (llamarse)</a>
+          <div class="res-check" id="res3"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cult-card">
+      <div class="label">Nota Cultural · Spanish in the world</div>
+      <h3>500 millones de hablantes</h3>
+      <p>The United States has the <strong>second-largest Spanish-speaking population in the world</strong> — over 41 million native speakers. Learning Spanish connects you to more than <strong>500 million</strong> speakers across some 20 countries, from Mexico and Spain to Argentina, Colombia, and right here in Washington State.</p>
+      <div class="fact-pills">
+        <span>#2 EE. UU. — 41+ millones</span>
+        <span>500+ millones en total</span>
+        <span>~20 países</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VOCABULARIO ═══ -->
+  <section class="sec" id="sec-vo">
+    <h2 class="sec-title">Vocabulario 1 · En la clase de español</h2>
+    <p class="sec-sub">Classroom phrases · greetings &amp; courtesy</p>
+
+    <p class="vocab-hint">Tap any card to flip it and see the translation. Test yourself before flipping.</p>
+
+    <div class="card">
+      <div class="card-title">Frases de la clase <span class="pill">12 PHRASES</span></div>
+      <div class="vocab-grid" id="fcClass"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Saludos y cortesía <span class="pill">8 TERMS</span></div>
+      <div class="vocab-grid" id="fcGreet"></div>
+    </div>
+  </section>
+
+  <!-- ═══ GRAMÁTICA ═══ -->
+  <section class="sec" id="sec-gr">
+    <h2 class="sec-title">Gramática · Pronombres · ser · llamarse</h2>
+    <p class="sec-sub">subject pronouns · the verb ser · the reflexive verb llamarse</p>
+
+    <div class="gbox">
+      <h3><span class="num">G1</span>Pronombres personales · Subject pronouns</h3>
+      <p class="sub">Who is doing the action. Spanish often drops these because the verb ending already shows the subject.</p>
+      <table class="conj-table">
+        <thead><tr><th>Singular</th><th>Plural</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> — I</td><td><span class="pn">nosotros / nosotras</span> — we</td></tr>
+          <tr><td><span class="pn">tú</span> — you (informal)</td><td><span class="pn">ellos / ellas</span> — they</td></tr>
+          <tr><td><span class="pn">él / ella / usted</span> — he / she / you (formal)</td><td><span class="pn">ustedes</span> — you all</td></tr>
+        </tbody>
+      </table>
+      <div class="ojo">
+        <div class="ojo-title">NOTA · ustedes</div>
+        <p>In this course we use <em>ustedes</em> for all "you all" contexts — the standard throughout Latin America. (Spain also uses <em>vosotros/as</em>.)</p>
+      </div>
+    </div>
+
+    <div class="gbox alt">
+      <h3><span class="num">G2</span>El verbo SER · To be</h3>
+      <p class="sub">Use <em>ser</em> for identity, origin, profession, and stable descriptions.</p>
+      <table class="conj-table">
+        <thead><tr><th colspan="2">ser</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> <span class="fm">soy</span></td><td><span class="pn">nosotros/as</span> <span class="fm">somos</span></td></tr>
+          <tr><td><span class="pn">tú</span> <span class="fm">eres</span></td><td><span class="pn">ellos/ellas/Uds.</span> <span class="fm">son</span></td></tr>
+          <tr><td><span class="pn">él/ella/Ud.</span> <span class="fm">es</span></td><td></td></tr>
+        </tbody>
+      </table>
+      <div class="ex-box">
+        <p><strong>Soy</strong> estudiante de español. → <em>I am a Spanish student.</em></p>
+        <p>Ella <strong>es</strong> de México. → <em>She is from Mexico.</em></p>
+        <p><strong>Somos</strong> compañeros de clase. → <em>We are classmates.</em></p>
+      </div>
+      <div class="ojo">
+        <div class="ojo-title">¡OJO! · Professions drop the article</div>
+        <p>After <em>ser</em>, omit the article with a profession: <em>Soy estudiante</em> — NOT <span style="text-decoration:line-through">Soy un estudiante</span>. The article returns when the noun is modified: <em>Soy un estudiante muy dedicado.</em></p>
+      </div>
+    </div>
+
+    <div class="gbox alt2">
+      <h3><span class="num">G3</span>El verbo LLAMARSE · To be named</h3>
+      <p class="sub">A reflexive verb — the pronoun (me, te, se…) changes with the subject. Literally "to call oneself."</p>
+      <table class="conj-table">
+        <thead><tr><th colspan="2">llamarse</th></tr></thead>
+        <tbody>
+          <tr><td><span class="pn">yo</span> <span class="fm">me llamo</span></td><td><span class="pn">nosotros/as</span> <span class="fm">nos llamamos</span></td></tr>
+          <tr><td><span class="pn">tú</span> <span class="fm">te llamas</span></td><td><span class="pn">ellos/ellas/Uds.</span> <span class="fm">se llaman</span></td></tr>
+          <tr><td><span class="pn">él/ella/Ud.</span> <span class="fm">se llama</span></td><td></td></tr>
+        </tbody>
+      </table>
+      <div class="ex-box">
+        <p>¿Cómo <strong>te llamas</strong>? → <em>What is your name? (informal)</em></p>
+        <p>¿Cómo <strong>se llama</strong> usted? → <em>What is your name? (formal)</em></p>
+        <p><strong>Me llamo</strong> Carlos. → <em>My name is Carlos.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRONUNCIACIÓN ═══ -->
+  <section class="sec" id="sec-pr">
+    <h2 class="sec-title">Pronunciación · El alfabeto español</h2>
+    <p class="sec-sub">pure vowels · special sounds · letter names</p>
+
+    <div class="card">
+      <div class="card-title">Las vocales <span class="pill">5 VOWELS</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Spanish vowels are always pure — one crisp sound each, never gliding like English.</p>
+      <div class="vowel-grid">
+        <div class="vowel-card"><div class="v">a</div><div class="s">ah</div></div>
+        <div class="vowel-card"><div class="v">e</div><div class="s">eh</div></div>
+        <div class="vowel-card"><div class="v">i</div><div class="s">ee</div></div>
+        <div class="vowel-card"><div class="v">o</div><div class="s">oh</div></div>
+        <div class="vowel-card"><div class="v">u</div><div class="s">oo</div></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Sonidos especiales <span class="pill">SPECIAL SOUNDS</span></div>
+      <div class="snd-grid">
+        <div class="snd-item"><span class="snd-l">ñ</span><span>"ny" — like <em>canyon</em></span></div>
+        <div class="snd-item"><span class="snd-l">ll</span><span>"y" sound — like <em>yes</em></span></div>
+        <div class="snd-item"><span class="snd-l">j</span><span>"h" — breathy, from the throat</span></div>
+        <div class="snd-item"><span class="snd-l">rr</span><span>trilled / rolled r</span></div>
+        <div class="snd-item"><span class="snd-l">h</span><span>always silent</span></div>
+        <div class="snd-item"><span class="snd-l">v</span><span>soft "b" sound</span></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Nombres de las letras <span class="pill">LETTER NAMES</span></div>
+      <p style="font-size:0.95rem;color:var(--text-light);margin-bottom:12px;">To spell a word aloud, use the letter names: <em>hola</em> → <strong style="color:var(--navy);">hache – o – ele – a</strong>.</p>
+      <p style="font-size:0.9rem;color:var(--text-light);">
+        <span class="q-pill">a</span><span class="q-pill">be</span><span class="q-pill">ce</span><span class="q-pill">de</span><span class="q-pill">e</span><span class="q-pill">efe</span><span class="q-pill">ge</span><span class="q-pill">hache</span><span class="q-pill">i</span><span class="q-pill">jota</span><span class="q-pill">ka</span><span class="q-pill">ele</span><span class="q-pill">eme</span><span class="q-pill">ene</span><span class="q-pill">eñe</span><span class="q-pill">o</span><span class="q-pill">pe</span><span class="q-pill">cu</span><span class="q-pill">ere</span><span class="q-pill">ese</span><span class="q-pill">te</span><span class="q-pill">u</span><span class="q-pill">ve</span><span class="q-pill">equis</span><span class="q-pill">ye</span><span class="q-pill">zeta</span>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ EJERCICIOS ═══ -->
+  <section class="sec" id="sec-ej">
+    <h2 class="sec-title">Ejercicios · Práctica</h2>
+    <p class="sec-sub">Ejercicio 1 · 2 · 3 · 4 · 5</p>
+
+    <!-- Ej 1 — SER table -->
+    <div class="card">
+      <div class="card-title">Ejercicio 1 · Tabla de conjugación — SER <span class="pill">FROM MEMORY</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Complete the full <em>ser</em> conjugation from memory.</p>
+      <div class="estar-grid">
+        <div class="field"><label>yo</label><input class="blk" id="q1_1" data-answer="soy" placeholder="___"></div>
+        <div class="field"><label>nosotros/as</label><input class="blk" id="q1_2" data-answer="somos" placeholder="___"></div>
+        <div class="field"><label>tú</label><input class="blk" id="q1_3" data-answer="eres" placeholder="___"></div>
+        <div class="field"><label>ellos/Uds.</label><input class="blk" id="q1_4" data-answer="son" placeholder="___"></div>
+        <div class="field" style="grid-column:1 / -1;max-width:50%;"><label>él/ella/Ud.</label><input class="blk" id="q1_5" data-answer="es" placeholder="___"></div>
+      </div>
+      <button class="chk-btn" onclick="checkBlanks('q1_1,q1_2,q1_3,q1_4,q1_5','rs1')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('q1_1,q1_2,q1_3,q1_4,q1_5','rs1')">Reset</button>
+      <div class="res-msg" id="rs1" aria-live="polite"></div>
+    </div>
+
+    <!-- Ej 2 — Completar con SER -->
+    <div class="card">
+      <div class="card-title">Ejercicio 2 · Completar con SER <span class="pill">FILL-IN</span></div>
+      <div class="word-bank">
+        <span class="word-bank-label">Word Bank</span>
+        <span class="word-bank-words"><span>soy</span><span>eres</span><span>es</span><span>somos</span><span>son</span></span>
+      </div>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text">Yo <input class="blk" id="q2_1" data-answer="soy" placeholder="___"> estudiante de español en SPSCC.</span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text">¿De dónde <input class="blk" id="q2_2" data-answer="eres" placeholder="___"> tú?</span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text">Ella <input class="blk" id="q2_3" data-answer="es" placeholder="___"> profesora de lingüística.</span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">Nosotros <input class="blk" id="q2_4" data-answer="somos" placeholder="___"> compañeros de clase.</span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text">Los estudiantes <input class="blk" id="q2_5" data-answer="son" placeholder="___"> muy trabajadores.</span></div>
+      <div class="ex-item"><span class="ex-num">6</span><span class="ex-text">¿<input class="blk" id="q2_6" data-answer="son" placeholder="___"> ustedes de habla hispana?</span></div>
+      <div class="ex-item"><span class="ex-num">7</span><span class="ex-text">Él <input class="blk" id="q2_7" data-answer="es" placeholder="___"> de origen cubano.</span></div>
+      <div class="ex-item"><span class="ex-num">8</span><span class="ex-text">Yo <input class="blk" id="q2_8" data-answer="soy" placeholder="___"> de San Francisco, California.</span></div>
+      <button class="chk-btn" onclick="checkBlanks('q2_1,q2_2,q2_3,q2_4,q2_5,q2_6,q2_7,q2_8','rs2')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('q2_1,q2_2,q2_3,q2_4,q2_5,q2_6,q2_7,q2_8','rs2')">Reset</button>
+      <div class="res-msg" id="rs2" aria-live="polite"></div>
+    </div>
+
+    <!-- Ej 3 — LLAMARSE dialogues -->
+    <div class="card">
+      <div class="card-title">Ejercicio 3 · LLAMARSE — Diálogos <span class="pill">FILL-IN</span></div>
+      <p style="font-size:0.92rem;color:var(--text-light);margin-bottom:14px;">Fill in with the correct form of <em>llamarse</em> (me llamo · te llamas · se llama · nos llamamos · se llaman).</p>
+      <div class="ex-item"><span class="ex-num">1</span><span class="ex-text">¿Cómo <input class="blk wide" id="q3_1" data-answer="te llamas" placeholder="___">? — Yo me llamo Valentina.</span></div>
+      <div class="ex-item"><span class="ex-num">2</span><span class="ex-text">¿Y cómo <input class="blk wide" id="q3_2" data-answer="se llama" placeholder="___"> tu compañera? — Ella se llama Isabel.</span></div>
+      <div class="ex-item"><span class="ex-num">3</span><span class="ex-text">Nosotros <input class="blk wide" id="q3_3" data-answer="nos llamamos" placeholder="___"> Marcos y Lucía.</span></div>
+      <div class="ex-item"><span class="ex-num">4</span><span class="ex-text">Los nuevos estudiantes <input class="blk wide" id="q3_4" data-answer="se llaman" placeholder="___"> Pedro, Sofía y Daniel.</span></div>
+      <div class="ex-item"><span class="ex-num">5</span><span class="ex-text">¿Cómo <input class="blk wide" id="q3_5" data-answer="se llama" placeholder="___"> usted? — Yo me llamo el doctor Ramírez.</span></div>
+      <button class="chk-btn" onclick="checkBlanks('q3_1,q3_2,q3_3,q3_4,q3_5','rs3')">Check Answers</button>
+      <button class="rst-btn" onclick="resetBlanks('q3_1,q3_2,q3_3,q3_4,q3_5','rs3')">Reset</button>
+      <div class="res-msg" id="rs3" aria-live="polite"></div>
+    </div>
+
+    <!-- Ej 4 — Alphabet spelling -->
+    <div class="card">
+      <div class="card-title">Ejercicio 4 · El alfabeto — Spelling <span class="pill">DELETREAR</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:4px;">Type the Spanish letter names separated by dashes.</p>
+      <p style="font-size:0.82rem;color:var(--text-hint);margin-bottom:14px;">Example: <em>hola</em> → hache – o – ele – a</p>
+      <div id="spellCont"></div>
+      <button class="chk-btn" onclick="checkSpelling()">Check Spelling</button>
+      <button class="rst-btn" onclick="resetSpelling()">Reset</button>
+      <div class="res-msg" id="rs4" aria-live="polite"></div>
+    </div>
+
+    <!-- Ej 5 — Short answer -->
+    <div class="card">
+      <div class="card-title">Ejercicio 5 · Respuesta corta — Sobre ti <span class="pill">SE CORRIGE SOLA</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Answer each question about yourself in a full Spanish sentence. The content is yours — the page checks that you used the right verb. / Contesta sobre ti en una oración completa.</p>
+      <div id="shortCont"></div>
+      <button class="chk-btn" onclick="checkShort()">Check My Answers</button>
+      <button class="rst-btn" onclick="resetShort()">Reset</button>
+      <div class="res-msg" id="rs5" aria-live="polite"></div>
+    </div>
+
+    <!-- Ej 6 — Mi perfil (writing) -->
+    <div class="card">
+      <div class="card-title">Ejercicio 6 · Mi perfil — My online profile <span class="pill">75 – 100 PALABRAS</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:12px;">Write a short profile in Spanish introducing yourself, as if for an online platform. Use <em>me llamo</em>, <em>soy</em>, where you're from, and what you study. The page checks structure; your instructor grades the content.</p>
+      <textarea class="disc-box" id="perfil" placeholder="¡Hola! Me llamo… Soy de… Estudio… en SPSCC."></textarea>
+      <div class="wordcount" id="perfilCount">0 palabras · necesitas entre 75 y 100</div>
+      <button class="chk-btn" onclick="checkPerfil()">Check My Profile</button>
+      <button class="rst-btn" onclick="resetPerfil()">Reset</button>
+      <div class="res-msg" id="rsPerfil" aria-live="polite"></div>
+      <div id="perfilFeedback" style="margin-top:12px;"></div>
+    </div>
+  </section>
+
+  <!-- ═══ JUEGOS ═══ -->
+  <section class="sec" id="sec-ju">
+    <h2 class="sec-title">Juegos · Play &amp; practice</h2>
+    <p class="sec-sub">matching · quiz · conjugation challenge</p>
+
+    <!-- Juego 1 — Matching -->
+    <div class="card">
+      <div class="card-title">Juego 1 · Emparejamiento — Frases de la clase <span class="pill">MATCHING</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Click a Spanish phrase, then its English match. Correct pairs turn green; wrong pairs flash red. / Empareja cada frase con su traducción.</p>
+      <div id="matchCont"></div>
+      <button class="rst-btn" style="margin-left:0;" onclick="buildMatch()">Shuffle / Reset</button>
+      <div class="res-msg" id="rsMatch" aria-live="polite"></div>
+    </div>
+
+    <!-- Juego 2 — MC quiz -->
+    <div class="card">
+      <div class="card-title">Juego 2 · Opción múltiple — Repaso <span class="pill">QUIZ</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Pick the best answer. Each one gives instant feedback. / Elige la mejor respuesta.</p>
+      <div id="quizCont"></div>
+      <button class="chk-btn" onclick="checkQuiz()">Score My Quiz</button>
+      <button class="rst-btn" onclick="resetQuiz()">Reset</button>
+      <div class="res-msg" id="rsQuiz" aria-live="polite"></div>
+    </div>
+
+    <!-- Juego 3 — Conjugation challenge -->
+    <div class="card">
+      <div class="card-title">Juego 3 · Reto de conjugación <span class="pill">SER / LLAMARSE</span></div>
+      <p style="font-size:0.9rem;color:var(--text-light);margin-bottom:14px;">Choose the correct form for each subject. Build your streak! / Elige la forma correcta.</p>
+      <div class="game-wrap" id="gameWrap">
+        <div class="game-scorebar">
+          <div>Puntos<b id="gScore">0</b></div>
+          <div>Racha<b id="gStreak">0</b></div>
+          <div>Pregunta<b id="gNum">1/10</b></div>
+        </div>
+        <div class="game-prompt" id="gPrompt">—</div>
+        <div class="game-sub" id="gSub"></div>
+        <div class="game-opts" id="gOpts"></div>
+        <div class="game-feedback" id="gFb"></div>
+      </div>
+      <button class="rst-btn" style="margin-left:0;" onclick="startGame()">Restart Game</button>
+    </div>
+  </section>
+
+  <div class="footer">
+    SPSCC · Spanish 121 · Capítulo 1 · Semana 1
+  </div>
+
+</div>
+
+<script>
+/* ── Tab switching ── */
+function switchTab(tab, el){
+  document.querySelectorAll('.tab').forEach(function(b){ b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  document.querySelectorAll('.sec').forEach(function(s){ s.classList.remove('active'); });
+  if(el){ el.classList.add('active'); el.setAttribute('aria-selected','true'); }
+  var s = document.getElementById('sec-'+tab);
+  if(s) s.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* ── Shared helpers ── */
+function normalize(s){
+  if(!s) return '';
+  return s.toString().trim().toLowerCase().normalize('NFD')
+    .replace(/[\u0300-\u036f]/g,'').replace(/\s+/g,' ');
+}
+function wordsOf(str){ return normalize(str).replace(/[¿?¡!.,;:]/g,' ').split(/\s+/).filter(Boolean); }
+function countWords(s){ return wordsOf(s).length; }
+function val(id){ var el=document.getElementById(id); return el?(el.value||'').trim():''; }
+function setMsg(id, ok, text){ var m=document.getElementById(id); if(!m) return; m.textContent=text; m.className='res-msg '+(ok?'ok':'ng'); }
+function showFb(id, ok, msg){ var fb=document.getElementById(id); if(!fb) return; fb.className='task-fb show '+(ok?'ok':'ng'); fb.textContent=(ok?'✓ ':'✗ ')+msg; }
+function clearFb(id){ var fb=document.getElementById(id); if(fb) fb.className='task-fb'; }
+
+/* ── Flashcards ── */
+var vocabClass = [
+  {es:'¿Cómo se dice…?', en:'How do you say…?'},
+  {es:'¿Cómo se escribe…?', en:'How do you spell…?'},
+  {es:'¿Puede(s) repetir, por favor?', en:'Can you repeat, please?'},
+  {es:'No entiendo.', en:"I don't understand."},
+  {es:'Más despacio, por favor.', en:'More slowly, please.'},
+  {es:'¿Qué significa…?', en:'What does … mean?'},
+  {es:'Tengo una pregunta.', en:'I have a question.'},
+  {es:'¿En qué página estamos?', en:'What page are we on?'},
+  {es:'Por favor / Gracias / De nada', en:"Please / Thank you / You're welcome"},
+  {es:'Perdón / Disculpe', en:"Excuse me / I'm sorry"},
+  {es:'¡Muy bien! / ¡Excelente!', en:'Very good! / Excellent!'},
+  {es:'Repite, por favor.', en:'Repeat, please.'}
+];
+var vocabGreet = [
+  {es:'Hola', en:'Hello'},
+  {es:'Buenos días', en:'Good morning'},
+  {es:'Buenas tardes', en:'Good afternoon'},
+  {es:'Buenas noches', en:'Good evening / night'},
+  {es:'Adiós', en:'Goodbye'},
+  {es:'Hasta luego', en:'See you later'},
+  {es:'¿Qué tal?', en:"How's it going?"},
+  {es:'Mucho gusto', en:'Nice to meet you'}
+];
+function buildFlash(list, containerId, extraClass){
+  var c = document.getElementById(containerId);
+  list.forEach(function(v){
+    var card = document.createElement('div');
+    card.className = 'vocab-card' + (extraClass ? ' '+extraClass : '');
+    card.setAttribute('onclick', "this.classList.toggle('flipped')");
+    card.innerHTML = '<div class="vocab-card-inner"><div class="vocab-front">' + v.es +
+      '</div><div class="vocab-back">' + v.en + '</div></div>';
+    c.appendChild(card);
+  });
+}
+
+/* ── Fill-in blanks ── */
+function checkBlanks(idsCSV, resultId){
+  var ids = idsCSV.split(','), correct = 0, total = ids.length;
+  ids.forEach(function(id){
+    var el = document.getElementById(id); if(!el) return;
+    el.classList.remove('ok','ng');
+    if(normalize(el.value) === normalize(el.getAttribute('data-answer'))){ el.classList.add('ok'); correct++; }
+    else el.classList.add('ng');
+  });
+  var msg = document.getElementById(resultId);
+  if(msg){
+    if(correct===total){ msg.textContent='¡Perfecto! '+correct+' / '+total+' correctas. ✓'; msg.className='res-msg ok'; }
+    else { msg.textContent=correct+' / '+total+' correctas. Revisa las marcadas en rojo.'; msg.className='res-msg ng'; }
+  }
+  updateCompletion();
+}
+function resetBlanks(idsCSV, resultId){
+  idsCSV.split(',').forEach(function(id){ var el=document.getElementById(id); if(el){ el.value=''; el.classList.remove('ok','ng'); } });
+  var msg=document.getElementById(resultId); if(msg){ msg.textContent=''; msg.className='res-msg'; }
+  updateCompletion();
+}
+
+/* ── Multiple-choice engine (resources + quiz) ── */
+var quizState = {}, MC_SETS = {};
+function buildMC(data, key, containerId, compact){
+  var container = document.getElementById(containerId); if(!container) return;
+  quizState[key] = data.map(function(){ return null; });
+  MC_SETS[key] = data;
+  data.forEach(function(item, i){
+    var div = document.createElement('div');
+    div.className = compact ? '' : 'quiz-item';
+    div.id = key + '_item_' + i;
+    var head = compact
+      ? '<div class="rc-label">✓ Comprueba que viste el recurso</div><div class="rc-q">' + item.q + '</div><div class="rc-gloss">' + item.gloss + '</div>'
+      : '<div class="quiz-q"><span class="qnum">' + (i+1) + '.</span>' + item.q + '</div><div class="quiz-gloss">' + item.gloss + '</div>';
+    var opts = item.options.map(function(opt, j){
+      return '<button type="button" class="quiz-opt" id="'+key+'_'+i+'_'+j+'" onclick="pickMC(\''+key+'\','+i+','+j+')"><span class="letter">'+'ABCD'[j]+'</span><span>'+opt+'</span></button>';
+    }).join('');
+    div.innerHTML = head + '<div class="quiz-options">'+opts+'</div><div class="quiz-explain" id="'+key+'_exp_'+i+'"></div>';
+    container.appendChild(div);
+  });
+}
+function pickMC(key, i, j){
+  quizState[key][i] = j;
+  MC_SETS[key][i].options.forEach(function(_, k){ document.getElementById(key+'_'+i+'_'+k).classList.toggle('selected', k===j); });
+  if(MC_SETS[key].instant) revealMC(key, i);
+  updateCompletion();
+}
+function revealMC(key, i){
+  var item = MC_SETS[key][i], chosen = quizState[key][i], ok = chosen===item.answer;
+  item.options.forEach(function(_, j){
+    var btn = document.getElementById(key+'_'+i+'_'+j);
+    btn.classList.remove('is-correct','is-wrong');
+    if(j===item.answer) btn.classList.add('is-correct');
+    else if(j===chosen) btn.classList.add('is-wrong');
+  });
+  var exp = document.getElementById(key+'_exp_'+i);
+  exp.className = 'quiz-explain show';
+  exp.innerHTML = '<strong>'+(ok?'✓ ¡Correcto!':'✗ No exactamente.')+'</strong> '+item.explain;
+  var wrap = document.getElementById(key+'_item_'+i);
+  if(wrap.className.indexOf('quiz-item')===0) wrap.className = 'quiz-item '+(ok?'correct':'wrong');
+  return ok;
+}
+function resetMC(key){
+  var data = MC_SETS[key];
+  quizState[key] = data.map(function(){ return null; });
+  data.forEach(function(item, i){
+    item.options.forEach(function(_, j){ document.getElementById(key+'_'+i+'_'+j).className='quiz-opt'; });
+    document.getElementById(key+'_exp_'+i).className='quiz-explain';
+    var wrap = document.getElementById(key+'_item_'+i);
+    if(wrap.className.indexOf('quiz-item')===0) wrap.className='quiz-item';
+  });
+}
+
+var resourceQuestions = [
+  { q:'¿Cómo se llama la letra <em>ñ</em> en español?', gloss:'From the alphabet video / practice.',
+    options:['ene','eñe','ele','equis'], answer:1,
+    explain:'La <strong>ñ</strong> se llama <em>eñe</em>. La <em>n</em> normal es <em>ene</em>.' },
+  { q:'¿Cuál es la forma de <em>ser</em> para <em>nosotros</em>?', gloss:'From the Ser video / Conjuguemos drills.',
+    options:['son','somos','soy','sois'], answer:1,
+    explain:'<em>Nosotros/as <strong>somos</strong></em>. <em>Son</em> es para ellos/ustedes.' },
+  { q:'¿Qué significa <em>«¿Cómo se escribe…?»</em>?', gloss:'From the classroom-phrases set.',
+    options:['How do you say…?','How do you spell…?','What does it mean?','Can you repeat?'], answer:1,
+    explain:'<em>¿Cómo se escribe…?</em> = How do you spell…? <em>¿Cómo se dice…?</em> = How do you say…?' },
+  { q:'La letra <em>h</em> en español se pronuncia…', gloss:'From the pronunciation guide.',
+    options:['como "h" inglesa','como "j"','siempre muda (silent)','como "ch"'], answer:2,
+    explain:'La <strong>h</strong> es <em>siempre muda</em> — no se pronuncia: <em>hola</em> suena "ola".' }
+];
+
+var quizData = [
+  { q:'¿Cómo <u>___</u> tú?  — Me llamo Ana.', gloss:'llamarse (tú)',
+    options:['te llamas','se llama','me llamo','se llaman'], answer:0,
+    explain:'<em>¿Cómo <strong>te llamas</strong>?</em> — la forma de <em>tú</em> de llamarse.' },
+  { q:'Yo <u>___</u> de Washington.', gloss:'ser (yo)',
+    options:['eres','es','soy','somos'], answer:2,
+    explain:'<em>Yo <strong>soy</strong> de Washington.</em> El origen usa <em>ser</em>.' },
+  { q:'El pronombre para "we" es…', gloss:'Subject pronouns',
+    options:['ustedes','nosotros','ellos','vosotros'], answer:1,
+    explain:'"We" = <strong>nosotros / nosotras</strong>.' },
+  { q:'¿Cuál es correcto después de <em>ser</em> + profesión?', gloss:'Article rule',
+    options:['Soy una profesora','Soy profesora','Soy la profesora','Ella soy profesora'], answer:1,
+    explain:'Se omite el artículo: <em>Soy <strong>profesora</strong></em>, no "soy una profesora".' },
+  { q:'Ella <u>___</u> Isabel.', gloss:'llamarse (ella)',
+    options:['te llamas','se llama','me llamo','son'], answer:1,
+    explain:'<em>Ella <strong>se llama</strong> Isabel.</em>' },
+  { q:'Ustedes <u>___</u> estudiantes.', gloss:'ser (ustedes)',
+    options:['somos','son','es','sois'], answer:1,
+    explain:'<em>Ustedes <strong>son</strong> estudiantes.</em>' },
+  { q:'¿Qué significa <em>«No entiendo»</em>?', gloss:'Classroom phrase',
+    options:["I have a question.","I don't understand.","Repeat, please.","See you later."], answer:1,
+    explain:'<em>No entiendo</em> = "I don\'t understand."' },
+  { q:'Para deletrear <em>hola</em>, la primera letra se dice…', gloss:'Letter names',
+    options:['hache','ache','ele','o'], answer:0,
+    explain:'<em>hola</em> → <strong>hache</strong> – o – ele – a.' }
+];
+
+function checkQuiz(){
+  var correct = 0;
+  quizData.forEach(function(_, i){ if(revealMC('quiz', i)) correct++; });
+  setMsg('rsQuiz', correct===quizData.length, correct+' / '+quizData.length+' correctas.'+(correct===quizData.length?' ¡Perfecto! ✓':' Lee cada explicación.'));
+  updateCompletion();
+}
+function resetQuiz(){ resetMC('quiz'); document.getElementById('rsQuiz').className='res-msg'; document.getElementById('rsQuiz').textContent=''; updateCompletion(); }
+
+/* ── Matching game ── */
+var matchData = [
+  {es:"¿Cómo se dice 'homework'?", en:"How do you say 'homework'?"},
+  {es:'No entiendo la pregunta.', en:"I don't understand the question."},
+  {es:'¿Puede repetir, por favor?', en:'Can you repeat, please?'},
+  {es:"¿Qué significa 'madrugada'?", en:"What does 'madrugada' mean?"},
+  {es:'Más despacio, por favor.', en:'More slowly, please.'},
+  {es:'Tengo una pregunta.', en:'I have a question.'},
+  {es:'¿En qué página estamos?', en:'What page are we on?'},
+  {es:'De nada.', en:"You're welcome."},
+  {es:'Perdón, llego tarde.', en:"Excuse me, I'm late."},
+  {es:'¡Muy bien!', en:'Very good!'}
+];
+var mSelEs = null, mSelEn = null, mMatched = 0, matchDone = false;
+function buildMatch(){
+  var c = document.getElementById('matchCont');
+  var order = matchData.map(function(_, i){ return i; });
+  for(var k=order.length-1;k>0;k--){ var r=Math.floor(Math.random()*(k+1)); var t=order[k]; order[k]=order[r]; order[r]=t; }
+  var esHtml = matchData.map(function(m, i){
+    return '<div class="mi" id="mes-'+i+'" data-idx="'+i+'" onclick="selSpanish(this)">'+(i+1)+'. '+m.es+'</div>';
+  }).join('');
+  var enHtml = order.map(function(idx){
+    return '<div class="mi" id="men-'+idx+'" data-idx="'+idx+'" onclick="selEnglish(this)">'+matchData[idx].en+'</div>';
+  }).join('');
+  c.innerHTML = '<div class="match-cols"><div><div class="match-col-label">Español</div>'+esHtml+'</div><div><div class="match-col-label">English</div>'+enHtml+'</div></div>';
+  mSelEs = null; mSelEn = null; mMatched = 0; matchDone = false;
+  document.getElementById('rsMatch').textContent=''; document.getElementById('rsMatch').className='res-msg';
+  updateCompletion();
+}
+function selSpanish(el){
+  if(el.classList.contains('done')) return;
+  document.querySelectorAll('#matchCont .mi[id^=mes-]').forEach(function(i){ i.classList.remove('sel'); });
+  el.classList.add('sel'); mSelEs = el; tryMatch();
+}
+function selEnglish(el){
+  if(el.classList.contains('done')) return;
+  document.querySelectorAll('#matchCont .mi[id^=men-]').forEach(function(i){ i.classList.remove('sel','bad'); });
+  el.classList.add('sel'); mSelEn = el; tryMatch();
+}
+function tryMatch(){
+  if(!mSelEs || !mSelEn) return;
+  if(mSelEs.dataset.idx === mSelEn.dataset.idx){
+    mSelEs.classList.remove('sel'); mSelEs.classList.add('done');
+    mSelEn.classList.remove('sel'); mSelEn.classList.add('done');
+    mMatched++;
+    if(mMatched === matchData.length){
+      matchDone = true;
+      setMsg('rsMatch', true, '¡Excelente! Emparejaste las '+mMatched+' frases. ✓');
+    }
+  } else {
+    var bad = mSelEn; bad.classList.add('bad');
+    setTimeout(function(){ bad.classList.remove('bad','sel'); }, 700);
+  }
+  mSelEs = null; mSelEn = null;
+  updateCompletion();
+}
+
+/* ── Spelling ── */
+var spellData = [
+  {word:'clase', answer:'ce - ele - a - ese - e'},
+  {word:'hola', answer:'hache - o - ele - a'},
+  {word:'español', answer:'e - ese - pe - a - eñe - o - ele'},
+  {word:'universidad', answer:'u - ene - i - ve - e - ere - ese - i - de - a - de'},
+  {word:'mujer', answer:'eme - u - jota - e - ere'}
+];
+function buildSpelling(){
+  var el = document.getElementById('spellCont');
+  el.innerHTML = spellData.map(function(w, i){
+    return '<div class="task-row"><span class="rnum">'+(i+1)+'.</span><span class="task-tag">'+w.word+'</span>'+
+      '<input class="task-input" id="sp'+i+'" placeholder="ce - ele - a - ese - e" autocomplete="off" spellcheck="false">'+
+      '<div class="task-fb" id="fbsp'+i+'"></div></div>';
+  }).join('');
+}
+function normSpell(s){ return normalize(s).replace(/\s*[-\u2013]\s*/g,' - ').replace(/\s+/g,' ').trim(); }
+function checkSpelling(){
+  var correct = 0;
+  spellData.forEach(function(w, i){
+    var el = document.getElementById('sp'+i);
+    var ok = normSpell(el.value) === normSpell(w.answer);
+    el.style.borderBottomColor = ok ? 'var(--sage)' : 'var(--terracotta)';
+    showFb('fbsp'+i, ok, ok ? '¡Correcto!' : w.answer);
+    if(ok) correct++;
+  });
+  setMsg('rs4', correct===spellData.length, correct+' / '+spellData.length+' correctas.');
+  updateCompletion();
+}
+function resetSpelling(){
+  spellData.forEach(function(_, i){ var el=document.getElementById('sp'+i); el.value=''; el.style.borderBottomColor=''; clearFb('fbsp'+i); });
+  document.getElementById('rs4').className='res-msg'; document.getElementById('rs4').textContent='';
+  updateCompletion();
+}
+
+/* ── Short answer (Ej 5) ── */
+var shortData = [
+  { q:'¿Cómo te llamas?', gloss:'What is your name?', key:'llamo', minW:3, hint:'Empieza con «Me llamo…».' },
+  { q:'¿De dónde eres?', gloss:'Where are you from?', key:'soy', minW:3, hint:'Usa «Soy de…».' },
+  { q:'¿Qué estudias?', gloss:'What do you study?', key:'estudio', minW:3, hint:'Usa «Estudio…».' },
+  { q:'¿Cómo es tu clase de español?', gloss:'What is your Spanish class like?', key:'es', minW:4, hint:'Usa «es» para describir: «Mi clase es…».' }
+];
+function buildShort(){
+  var c = document.getElementById('shortCont');
+  c.innerHTML = shortData.map(function(s, i){
+    return '<div style="margin-bottom:14px;"><div style="font-size:0.92rem;font-weight:700;color:var(--navy);">'+(i+1)+'. '+s.q+
+      ' <span style="font-weight:400;color:var(--text-hint);font-style:italic;font-size:0.82rem;">'+s.gloss+'</span></div>'+
+      '<input class="task-input" id="sa'+i+'" placeholder="Escribe tu respuesta…" autocomplete="off">'+
+      '<div class="task-fb" id="fbsa'+i+'"></div></div>';
+  }).join('');
+}
+function gradeShort(i){
+  var s = shortData[i], v = val('sa'+i), w = wordsOf(v);
+  if(!v) return { ok:false, msg:'Escribe tu respuesta.' };
+  if(w.length < s.minW) return { ok:false, msg:'Escribe una oración completa (mínimo '+s.minW+' palabras).' };
+  if(w.indexOf(normalize(s.key)) === -1) return { ok:false, msg:s.hint };
+  return { ok:true, msg:'¡Bien! Respuesta completa.' };
+}
+function checkShort(){
+  var correct = 0;
+  shortData.forEach(function(_, i){
+    var r = gradeShort(i);
+    document.getElementById('sa'+i).style.borderBottomColor = r.ok ? 'var(--sage)' : 'var(--terracotta)';
+    showFb('fbsa'+i, r.ok, r.msg);
+    if(r.ok) correct++;
+  });
+  setMsg('rs5', correct===shortData.length, correct+' / '+shortData.length+' respuestas válidas.');
+  updateCompletion();
+}
+function resetShort(){
+  shortData.forEach(function(_, i){ var el=document.getElementById('sa'+i); el.value=''; el.style.borderBottomColor=''; clearFb('fbsa'+i); });
+  document.getElementById('rs5').className='res-msg'; document.getElementById('rs5').textContent='';
+  updateCompletion();
+}
+
+/* ── Perfil (writing) ── */
+function updatePerfilCount(){
+  var n = countWords(val('perfil'));
+  var el = document.getElementById('perfilCount');
+  var ok = n>=75 && n<=100;
+  el.textContent = n+' palabras · necesitas entre 75 y 100';
+  el.className = 'wordcount ' + (n===0 ? '' : (ok?'ok':'ng'));
+}
+function perfilChecks(){
+  var text = val('perfil'), w = wordsOf(text), n = w.length;
+  return [
+    { label:'Extensión 75–100 palabras', ok: n>=75 && n<=100, msg: n===0?'Todavía no has escrito nada.':'Tienes '+n+' palabras.' },
+    { label:'Usa «me llamo»', ok: w.indexOf('llamo')!==-1, msg:'Preséntate con «Me llamo…».' },
+    { label:'Usa «soy»', ok: w.indexOf('soy')!==-1, msg:'Di quién eres o de dónde eres con «soy».' },
+    { label:'Dices de dónde eres (de + lugar)', ok: /\bsoy de\b|\bde [a-z]/.test(normalize(text)), msg:'Añade tu origen: «Soy de…».' },
+    { label:'Dices qué estudias', ok: w.indexOf('estudio')!==-1 || w.indexOf('estudiante')!==-1, msg:'Menciona qué estudias con «estudio…».' }
+  ];
+}
+function checkPerfil(){
+  var checks = perfilChecks(), correct = checks.filter(function(c){return c.ok;}).length;
+  document.getElementById('perfilFeedback').innerHTML = checks.map(function(c){
+    return '<div class="task-fb show '+(c.ok?'ok':'ng')+'">'+(c.ok?'✓ ':'✗ ')+c.label+(c.ok?'':' — '+c.msg)+'</div>';
+  }).join('');
+  setMsg('rsPerfil', correct===checks.length, correct+' / '+checks.length+' requisitos cumplidos.');
+  updateCompletion();
+}
+function resetPerfil(){
+  document.getElementById('perfil').value=''; document.getElementById('perfilFeedback').innerHTML='';
+  document.getElementById('rsPerfil').className='res-msg'; document.getElementById('rsPerfil').textContent='';
+  updatePerfilCount(); updateCompletion();
+}
+
+/* ── Conjugation challenge game ── */
+var gameData = [
+  {s:'yo', v:'ser', a:'soy', o:['soy','eres','es']},
+  {s:'tú', v:'ser', a:'eres', o:['soy','eres','somos']},
+  {s:'ella', v:'ser', a:'es', o:['es','son','eres']},
+  {s:'nosotros', v:'ser', a:'somos', o:['son','somos','soy']},
+  {s:'ustedes', v:'ser', a:'son', o:['son','es','somos']},
+  {s:'yo', v:'llamarse', a:'me llamo', o:['me llamo','te llamas','se llama']},
+  {s:'tú', v:'llamarse', a:'te llamas', o:['se llama','te llamas','me llamo']},
+  {s:'él', v:'llamarse', a:'se llama', o:['se llama','se llaman','nos llamamos']},
+  {s:'nosotros', v:'llamarse', a:'nos llamamos', o:['nos llamamos','se llaman','me llamo']},
+  {s:'ellos', v:'llamarse', a:'se llaman', o:['se llama','se llaman','te llamas']}
+];
+var gIdx = 0, gScore = 0, gStreak = 0, gFinished = false, gLock = false;
+function startGame(){
+  gIdx = 0; gScore = 0; gStreak = 0; gFinished = false; gLock = false;
+  document.getElementById('gScore').textContent = '0';
+  document.getElementById('gStreak').textContent = '0';
+  document.getElementById('gFb').textContent = ''; document.getElementById('gFb').className='game-feedback';
+  showGameQ();
+  updateCompletion();
+}
+function showGameQ(){
+  var q = gameData[gIdx];
+  document.getElementById('gNum').textContent = (gIdx+1)+'/'+gameData.length;
+  document.getElementById('gPrompt').textContent = q.s + ' + ' + q.v;
+  document.getElementById('gSub').textContent = 'Choose the correct form of «'+q.v+'» for «'+q.s+'».';
+  var opts = q.o.slice();
+  for(var k=opts.length-1;k>0;k--){ var r=Math.floor(Math.random()*(k+1)); var t=opts[k]; opts[k]=opts[r]; opts[r]=t; }
+  document.getElementById('gOpts').innerHTML = opts.map(function(o){
+    return '<button type="button" class="game-opt" onclick="pickGame(this,\''+o.replace(/'/g,"\\'")+'\')">'+o+'</button>';
+  }).join('');
+  gLock = false;
+}
+function pickGame(el, choice){
+  if(gLock) return; gLock = true;
+  var q = gameData[gIdx], fb = document.getElementById('gFb');
+  var ok = normalize(choice) === normalize(q.a);
+  document.querySelectorAll('#gOpts .game-opt').forEach(function(b){
+    if(normalize(b.textContent)===normalize(q.a)) b.classList.add('is-correct');
+  });
+  if(ok){ gScore++; gStreak++; fb.textContent='✓ ¡Correcto! '+q.s+' '+q.a+'.'; fb.className='game-feedback ok'; }
+  else { gStreak=0; el.classList.add('is-wrong'); fb.textContent='✗ '+q.s+' '+q.a+'.'; fb.className='game-feedback ng'; }
+  document.getElementById('gScore').textContent = gScore;
+  document.getElementById('gStreak').textContent = gStreak;
+  setTimeout(function(){
+    gIdx++;
+    if(gIdx < gameData.length){ showGameQ(); }
+    else {
+      gFinished = true;
+      document.getElementById('gPrompt').innerHTML = '<span class="game-done">¡Fin! '+gScore+' / '+gameData.length+'</span>';
+      document.getElementById('gSub').textContent = gScore===gameData.length ? '¡Perfecto! Dominas ser y llamarse.' : 'Pulsa "Restart Game" para intentarlo de nuevo.';
+      document.getElementById('gOpts').innerHTML = '';
+      document.getElementById('gNum').textContent = gameData.length+'/'+gameData.length;
+    }
+    updateCompletion();
+  }, 950);
+}
+
+/* ── Completion meter ── */
+function idsFilled(prefix, n){ var out=[]; for(var i=1;i<=n;i++) out.push(val(prefix+i).length>0); return out; }
+var completionGroups = [
+  { label:'Nombre', tab:'ov', items:function(){ return [val('studentName').length>0]; } },
+  { label:'Recursos', tab:'ov', items:function(){ return resourceQuestions.map(function(_, i){ return quizState['res'+i][0]!==null; }); } },
+  { label:'Ejercicios', tab:'ej', items:function(){
+      return idsFilled('q1_',5).concat(idsFilled('q2_',8), idsFilled('q3_',5),
+        spellData.map(function(_, i){ return val('sp'+i).length>0; }),
+        shortData.map(function(_, i){ return val('sa'+i).length>0; })); } },
+  { label:'Juegos', tab:'ju', items:function(){
+      return [matchDone].concat(quizData.map(function(_, i){ return quizState['quiz'][i]!==null; }), [gFinished]); } },
+  { label:'Perfil', tab:'ej', items:function(){ return [val('perfil').length>0]; } }
+];
+function completionStats(){
+  return completionGroups.map(function(g){ var a=g.items(); return { label:g.label, tab:g.tab, done:a.filter(Boolean).length, total:a.length }; });
+}
+
+/* ── Live score: correct answers across every auto-graded item ── */
+function blanksCorrect(prefix, n){
+  var c = 0;
+  for(var i=1;i<=n;i++){
+    var el = document.getElementById(prefix+i);
+    if(el && el.value.trim() && normalize(el.value) === normalize(el.getAttribute('data-answer'))) c++;
+  }
+  return c;
+}
+function computeScore(){
+  var correct = 0, total = 0;
+  // Fill-in exercises (Ej 1–3)
+  correct += blanksCorrect('q1_',5) + blanksCorrect('q2_',8) + blanksCorrect('q3_',5); total += 18;
+  // Ej 4 — spelling
+  spellData.forEach(function(w, i){ if(val('sp'+i) && normSpell(val('sp'+i)) === normSpell(w.answer)) correct++; }); total += spellData.length;
+  // Ej 5 — short answer
+  shortData.forEach(function(_, i){ if(val('sa'+i) && gradeShort(i).ok) correct++; }); total += shortData.length;
+  // Ej 6 — perfil (structure checks)
+  perfilChecks().forEach(function(c){ if(c.ok) correct++; }); total += 5;
+  // Juego 1 — matching
+  correct += mMatched; total += matchData.length;
+  // Juego 2 — quiz
+  quizData.forEach(function(it, i){ if(quizState['quiz'] && quizState['quiz'][i] === it.answer) correct++; }); total += quizData.length;
+  // Juego 3 — conjugation challenge
+  correct += gScore; total += gameData.length;
+  // Resources
+  resourceQuestions.forEach(function(it, i){ if(quizState['res'+i] && quizState['res'+i][0] === it.answer) correct++; }); total += resourceQuestions.length;
+  return { correct:correct, total:total };
+}
+function updateScore(){
+  var s = computeScore();
+  var pct = s.total ? Math.round(s.correct / s.total * 100) : 0;
+  var el = document.getElementById('completionScore');
+  if(el) el.textContent = '★ ' + pct + '% correcto';
+}
+
+function updateCompletion(){
+  var stats = completionStats(), d=0, t=0;
+  stats.forEach(function(g){ d+=g.done; t+=g.total; });
+  var pct = t ? Math.round(d/t*100) : 0;
+  document.getElementById('completionPct').textContent = pct+'%';
+  document.getElementById('pf').style.width = pct+'%';
+  document.getElementById('completionLegend').innerHTML = stats.map(function(g){
+    return '<button type="button" class="legend-pill '+(g.done===g.total?'done':'')+'" onclick="jumpTab(\''+g.tab+'\')">'+g.label+' '+g.done+'/'+g.total+'</button>';
+  }).join('');
+  updateScore();
+}
+function jumpTab(tab){
+  var btns = document.querySelectorAll('.tab');
+  for(var i=0;i<btns.length;i++){ if((btns[i].getAttribute('onclick')||'').indexOf("'"+tab+"'")!==-1){ switchTab(tab, btns[i]); return; } }
+  switchTab(tab, null);
+}
+document.addEventListener('input', function(){ updatePerfilCount(); updateCompletion(); });
+document.addEventListener('change', updateCompletion);
+
+/* ── Student report ── */
+function escapeHtml(str){ return (str==null?'':String(str)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
+function stripTags(html){ var d=document.createElement('div'); d.innerHTML=html||''; return (d.textContent||'').replace(/\s+/g,' ').trim(); }
+function reportTable(title, scoreText, groups){
+  var blocks = groups.map(function(g){
+    var rows = g.items.map(function(it){
+      return '<tr class="'+(it.value?(it.ok?'ok':'bad'):'blank')+'"><td class="num">'+escapeHtml(it.label)+'</td><td>'+
+        (it.value?escapeHtml(it.value):'<span class="blanktxt">(en blanco)</span>')+'</td><td class="note">'+escapeHtml(it.msg||'')+
+        '</td><td class="mark">'+(it.value?(it.ok?'✓':'✗'):'—')+'</td></tr>';
+    }).join('');
+    return '<h3>'+escapeHtml(g.heading)+'</h3><table><tbody>'+rows+'</tbody></table>';
+  }).join('');
+  return '<h2>'+escapeHtml(title)+'<span class="score">'+escapeHtml(scoreText)+'</span></h2>'+blocks;
+}
+function collectBlanks(prefix, n, heading){
+  var items=[], correct=0;
+  for(var i=1;i<=n;i++){
+    var el=document.getElementById(prefix+i); if(!el) continue;
+    var v=(el.value||'').trim(), expected=el.getAttribute('data-answer')||'';
+    var ok=normalize(v)===normalize(expected); if(ok) correct++;
+    items.push({ label:String(i), value:v, ok:ok, msg: ok?'Correcto.':'Respuesta: '+expected });
+  }
+  return { heading:heading, items:items, correct:correct, total:items.length };
+}
+function buildReportHtml(name){
+  var stamp = new Date().toLocaleString('en-US',{ year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit' });
+
+  var g1 = collectBlanks('q1_',5,'Ejercicio 1 — Conjugación de ser');
+  var g2 = collectBlanks('q2_',8,'Ejercicio 2 — Completar con ser');
+  var g3 = collectBlanks('q3_',5,'Ejercicio 3 — Llamarse');
+  var blanks=[g1,g2,g3], blankCorrect=0, blankTotal=0;
+  blanks.forEach(function(g){ blankCorrect+=g.correct; blankTotal+=g.total; });
+
+  var spItems = spellData.map(function(w, i){ var v=val('sp'+i); var ok=normSpell(v)===normSpell(w.answer); return { label:w.word, value:v, ok:ok, msg: ok?'Correcto.':'Respuesta: '+w.answer }; });
+  var spCorrect = spItems.filter(function(x){return x.ok;}).length;
+
+  var saItems = shortData.map(function(s, i){ var v=val('sa'+i); var r=gradeShort(i); return { label:s.q, value:v, ok:r.ok, msg:r.msg }; });
+  var saCorrect = saItems.filter(function(x){return x.ok;}).length;
+
+  var mcItems = quizData.map(function(item, i){ var ch=quizState['quiz'][i]; return { label:String(i+1), value: ch===null?'':stripTags(item.options[ch]), ok: ch===item.answer, msg: ch===item.answer?'Correcto.':'Correcta: '+stripTags(item.options[item.answer]) }; });
+  var mcCorrect = mcItems.filter(function(x){return x.ok;}).length;
+  var resItems = resourceQuestions.map(function(item, i){ var ch=quizState['res'+i][0]; return { label:'Recurso '+(i+1), value: ch===null?'':stripTags(item.options[ch]), ok: ch===item.answer, msg: ch===item.answer?'Correcto.':'Correcta: '+stripTags(item.options[item.answer]) }; });
+  var resCorrect = resItems.filter(function(x){return x.ok;}).length;
+
+  var gameItem = [{ label:'Reto de conjugación', value: gFinished?(gScore+' / '+gameData.length):'', ok: gFinished && gScore>=8, msg: gFinished?(gScore>=8?'¡Bien dominado!':'Practica un poco más.'):'Sin terminar.' }];
+  var matchItem = [{ label:'Emparejamiento', value: matchDone?(matchData.length+' / '+matchData.length):(mMatched+' / '+matchData.length), ok: matchDone, msg: matchDone?'Completado.':'Sin terminar.' }];
+
+  var perfil = val('perfil'), perfilWords = countWords(perfil), pChecks = perfilChecks();
+  var pItems = pChecks.map(function(c){ return { label:c.label.replace(/\s*\(.*\)$/,''), value: c.ok?'sí':(perfilWords?'no':''), ok:c.ok, msg:c.msg }; });
+  var pCorrect = pItems.filter(function(x){return x.ok;}).length;
+
+  var totalCorrect = blankCorrect+spCorrect+saCorrect+mcCorrect+resCorrect+mcItems.length*0+ (matchDone?1:0) + (gFinished&&gScore>=8?1:0) + pCorrect;
+  var totalItems = blankTotal+spItems.length+saItems.length+mcItems.length+resItems.length+1+1+pItems.length;
+
+  var stats = completionStats(), cd=0, ct=0;
+  stats.forEach(function(g){ cd+=g.done; ct+=g.total; });
+  var cpct = ct?Math.round(cd/ct*100):0;
+  var compRows = stats.map(function(g){ return '<li class="'+(g.done===g.total?'checked':'')+'">'+(g.done===g.total?'☑':'☐')+' '+escapeHtml(g.label)+' — '+g.done+' / '+g.total+'</li>'; }).join('');
+
+  return '<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><title>Reporte — '+escapeHtml(name)+' — Semana 1</title><style>'+
+  "body{font-family:Georgia,'Times New Roman',serif;color:#2A2118;max-width:850px;margin:0 auto;padding:40px 32px;line-height:1.6;}"+
+  'header{border-bottom:4px solid #C45D3A;padding-bottom:16px;margin-bottom:28px;}'+
+  'h1{font-size:1.6rem;color:#1B2A4A;margin:0 0 6px;}'+
+  ".meta{font-family:'Courier New',monospace;font-size:0.78rem;color:#6B5D4A;} .meta strong{color:#1B2A4A;}"+
+  '.summary{background:#FBF5EA;border-left:5px solid #D4A24C;padding:14px 18px;margin-bottom:28px;font-size:0.95rem;}'+
+  'h2{font-size:1.1rem;color:#1B2A4A;margin:32px 0 10px;border-left:5px solid #C45D3A;padding-left:12px;}'+
+  "h3{font-size:0.78rem;font-family:'Courier New',monospace;text-transform:uppercase;letter-spacing:0.06em;color:#6B5D4A;margin:18px 0 6px;font-weight:normal;}"+
+  ".score{font-family:'Courier New',monospace;font-size:0.72rem;font-weight:normal;color:#6B5D4A;display:block;padding-top:2px;}"+
+  'table{width:100%;border-collapse:collapse;font-size:0.86rem;margin-bottom:8px;}'+
+  'td{padding:8px 10px;border-bottom:1px solid #EDE2CE;vertical-align:top;}'+
+  "td.num{color:#6B5D4A;font-family:'Courier New',monospace;font-size:0.75rem;white-space:nowrap;}"+
+  'td.note{font-size:0.78rem;color:#6B5D4A;font-style:italic;} td.mark{text-align:center;font-weight:bold;width:26px;}'+
+  'tr.ok{background:#F2F8EE;} tr.ok td.mark{color:#4C7A3C;} tr.bad{background:#FCF0EE;} tr.bad td.mark{color:#A8452A;}'+
+  '.blanktxt{color:#A89A88;} ul.check{list-style:none;padding:0;font-size:0.9rem;} ul.check li{padding:5px 0;border-bottom:1px solid #F2EADB;} ul.check li.checked{color:#4C7A3C;}'+
+  '.essay{background:#FBF5EA;border:1px solid #EDE2CE;border-radius:8px;padding:16px 20px;white-space:pre-wrap;font-size:0.92rem;margin-bottom:12px;}'+
+  "footer{margin-top:40px;border-top:1px solid #EDE2CE;padding-top:12px;font-family:'Courier New',monospace;font-size:0.68rem;color:#6B5D4A;}"+
+  '@media print{body{padding:0;}h2{page-break-after:avoid;}table{page-break-inside:avoid;}}'+
+  '</style></head><body>'+
+  '<header><h1>Spanish 121 · Capítulo 1 — Palabras</h1><p class="meta"><strong>Estudiante:</strong> '+escapeHtml(name)+' &nbsp;·&nbsp; <strong>Semana 1</strong> &nbsp;·&nbsp; Generado: '+escapeHtml(stamp)+'</p></header>'+
+  '<div class="summary"><strong>Resumen:</strong> '+totalCorrect+' / '+totalItems+' respuestas correctas · Página completada al <strong>'+cpct+'%</strong> ('+cd+' / '+ct+' elementos)</div>'+
+  '<h2>Progreso por sección</h2><ul class="check">'+compRows+'</ul>'+
+  reportTable('Ejercicios 1–3 (fill-in)', blankCorrect+' / '+blankTotal+' correctas', blanks)+
+  reportTable('Ejercicio 4 — El alfabeto', spCorrect+' / '+spItems.length+' correctas', [{ heading:'Deletreo', items:spItems }])+
+  reportTable('Ejercicio 5 — Respuesta corta', saCorrect+' / '+saItems.length+' válidas · revisado automáticamente', [{ heading:'Sobre ti', items:saItems }])+
+  reportTable('Juegos', (mcCorrect)+' / '+mcItems.length+' en el quiz', [{ heading:'Juego 2 — Opción múltiple', items:mcItems }, { heading:'Juego 1 — Emparejamiento', items:matchItem }, { heading:'Juego 3 — Reto de conjugación', items:gameItem }])+
+  reportTable('Preguntas de los recursos', resCorrect+' / '+resItems.length+' correctas', [{ heading:'Recursos en línea', items:resItems }])+
+  '<h2>Mi perfil<span class="score">'+pCorrect+' / '+pItems.length+' requisitos automáticos · el contenido lo califica el instructor</span></h2>'+
+  '<h3>Perfil ('+perfilWords+' palabras)</h3><div class="essay">'+(perfil?escapeHtml(perfil):'(Sin escribir.)')+'</div>'+
+  reportTable('Revisión automática del perfil', pCorrect+' / '+pItems.length, [{ heading:'Requisitos', items:pItems }])+
+  '<footer>South Puget Sound Community College · ESP 121 · Capítulo 1 · Reporte generado desde la página de la Semana 1. Para entregar como PDF, abre este archivo e imprime → Guardar como PDF.</footer></body></html>';
+}
+function downloadReport(){
+  var field = document.getElementById('studentName'), name = (field.value||'').trim();
+  if(!name){ field.focus(); field.style.borderColor='#A8452A'; alert('Escribe tu nombre primero. / Please enter your name before downloading the report.'); setTimeout(function(){ field.style.borderColor=''; },2500); return; }
+  var html = buildReportHtml(name);
+  var safe = name.replace(/[^a-z0-9]+/gi,'_').replace(/^_+|_+$/g,'') || 'estudiante';
+  var blob = new Blob([html], { type:'text/html;charset=utf-8' });
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a'); a.href=url; a.download='Semana1_Cap1_'+safe+'.html';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1000);
+}
+
+/* ── Build everything (after completion meter is defined) ── */
+buildFlash(vocabClass, 'fcClass', '');
+buildFlash(vocabGreet, 'fcGreet', 'greet-card');
+resourceQuestions.forEach(function(q, i){ buildMC([q], 'res'+i, 'res'+i, true); MC_SETS['res'+i].instant = true; });
+buildMC(quizData, 'quiz', 'quizCont', false);
+buildMatch();
+buildSpelling();
+buildShort();
+startGame();
+
+updatePerfilCount();
+updateCompletion();
+</script>
+
+</body>
+</html>
